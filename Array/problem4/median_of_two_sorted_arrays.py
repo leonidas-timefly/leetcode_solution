@@ -18,31 +18,57 @@ class Solution:
     def findMedianSortedArrays(self, nums1, nums2):
          nums3 = []
          m = len(nums1)
+         print(m)
+
          n = len(nums2)
+         print(n)
          i = 0
          j = 0
-         while i != m and j!=n:
-             if nums1[i] < nums2[j]:
-                 nums3[i+j] = nums1[i]
-                 i += 1
+         if m > 0 and n > 0:
+            while i != m and j != n:
+                if nums1[i] < nums2[j]:
+                    nums3.append(nums1[i])
+                    i += 1
+                else:
+                    nums3.append(nums2[j])
+                    j += 1
+            #print(nums3)
+            if i == m:
+                while j != n:
+                    nums3.append(nums2[j])
+                    j += 1
+            elif j == n:
+                while i != m:
+                    nums3.append(nums1[i])
+                    i += 1
+            #print(nums3)
+            if (m + n) % 2 == 0:
+                mid = (nums3[int((m + n) / 2)-1] + nums3[int((m + n) / 2 + 1)-1]) / 2
+
+
+            else:
+                #print(int((m + n + 1) / 2))
+                mid = nums3[int((m + n + 1) / 2)-1]
+            print(mid)
+            return mid
+         elif m==0:
+             if n%2 == 0:
+                 print((nums2[int(n/2-1)]+nums2[int(n/2)])/2.0)
+                 return (nums2[int(n/2-1)]+nums2[int(n/2)])/2.0
              else:
-                 nums3[i+j]=nums2[j]
-                 j += 1
-         if i==m:
-             while j != n:
-                 nums3[i+j] = nums2[j]
-                 j += 1
-         elif j==n:
-             while i != m:
-                 nums3[i+j] = nums1[i]
-                 i += 1
-         if (m + n)%2 == 0:
-             mid = (nums3[(m+n)/2]+nums3[(m+n)/2+1])/2
+                 print(nums2[int((n+1)/2-1)])
+                 return nums2[int((n+1)/2-1)]
+         elif n==0:
+             if m%2 == 0:
+                 print((nums1[int(m/2-1)]+nums1[int(m/2)])/2.0)
+                 return (nums1[int(m/2-1)]+nums1[int(m/2)])/2.0
+             else:
+                 print(nums1[int((m+1)/2-1)])
+                 return nums1[int((m+1)/2-1)]
          else:
-             mid = nums3[(m+n+1)/2]
-         print(mid)
-         return mid
-nums1 = [1, 3]
-nums2 = [2]
+             raise ValueError
+
+nums1 = [1, 2, 5, 6]
+nums2 = []
 function = Solution()
-function.twoSum(nums1, nums2)
+function.findMedianSortedArrays(nums1, nums2)
