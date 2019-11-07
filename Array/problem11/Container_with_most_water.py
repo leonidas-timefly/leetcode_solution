@@ -2,8 +2,9 @@ class Solution:
     def maxArea(self, height):
           m=len(height)
           old_area=0
-          i=0
+
           j=m-1
+          i = 0
           if m == 1 or m == 0:
               return 0
           if m == 2:
