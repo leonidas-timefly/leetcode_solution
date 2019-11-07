@@ -68,7 +68,3 @@ class Solution:
          else:
              raise ValueError
 
-nums1 = [1, 2, 5, 6]
-nums2 = []
-function = Solution()
-function.findMedianSortedArrays(nums1, nums2)
