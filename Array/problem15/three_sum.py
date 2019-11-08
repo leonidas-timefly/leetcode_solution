@@ -87,10 +87,6 @@ class Solution:
 '''
 class Solution:
     def threeSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
         nums.sort()
         res = []
         lennums = len(nums)
@@ -120,6 +116,7 @@ class Solution:
                     left += 1
                 if sumthree > 0:
                     right -= 1
+        print(res)
         return res
 
 
