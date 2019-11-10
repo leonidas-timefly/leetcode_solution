@@ -6,7 +6,7 @@ class Solution:
                    del nums[i]
                    i -= 1
                i += 1
-           print(len(nums))
+           #print(len(nums))
            return len(nums)
 
 nums1=[-1, 0, 1, 2, -1, -4, -5, 3]
