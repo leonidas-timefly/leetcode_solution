@@ -1,0 +1,1 @@
+pop()：delete given key,inverted order
