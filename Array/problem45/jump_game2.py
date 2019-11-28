@@ -8,21 +8,17 @@ Your goal is to reach the last index in the minimum number of jumps.
 class Solution:
     def jump(self, nums):
         n = len(nums)
-
         level = level_end = max_index = 0
-
         for i in range(n - 1):
-            max_index = max(max_index, i + nums[i])  # Keep finding max jump in current level (until end of level is reached below)
-
-            if max_index >= n - 1:  # Reached end of list
+            max_index = max(max_index, i + nums[i])
+            if max_index >= n - 1:
                  return (level + 1)
-
-            if i == level_end:  # If reached end of current level
-                 level += 1  # Start new level (jump)
-                 level_end = max_index  # Set end of new level
-        #print(level)
-
+            if i == level_end:
+                 level += 1
+                 level_end = max_index
         return level
+
+
 
 
 
