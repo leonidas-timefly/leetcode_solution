@@ -9,10 +9,11 @@ How many possible unique paths are there?
 class Solution:
     def uniquePaths(self, m, n):
         array = [1] * n
+
         for _ in range(1, m):
-            for i in range(1,n):
+            for i in range(1, n):
                 array[i] = array[i-1] + array[i]
-        #print(arr)
+        #print(array)
         return array[-1]
 
 
