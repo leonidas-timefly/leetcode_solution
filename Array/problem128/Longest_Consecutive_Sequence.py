@@ -22,7 +22,6 @@ class Solution:
             max_len = max(max_len, num_now)
             num_now = 1
             i += 1
-        print(max_len)
         return max_len
 
 nums1 = [100,4,200,1,3,2]
