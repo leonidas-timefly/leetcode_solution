@@ -12,7 +12,7 @@ class Solution:
         for m in temp:
             if len(m) == k and sum(m) == n:
                 answer.append(m)
-        #print(answer)
+        print(answer)
         return answer
 nums1 = [100,4,200,1,3,2]
 function = Solution()
