@@ -6,29 +6,28 @@ class Solution:
         max_answer = 0
         if matrix == []:
             return 0
-        for i in range(len(matrix[0])):
-            for j in range(len(matrix)):
+        len_x = len(matrix[0])
+        len_y = len(matrix)
+        for i in range(len_x):
+            for j in range(len_y):
                 if matrix[j][i] == "1":
                     start_j = j
                     start_i = i
                     high_now = 0
-                    min_len = 1000
-                    while matrix[start_j][start_i] == "1" and start_j < len(matrix):
+                    min_len = 100
+                    while matrix[start_j][start_i] == "1" and start_j < len_y:
                         high_now += 1
-                        start_i = i
                         len_now = 0
-                        while start_i < len(matrix[0]) and matrix[start_j][start_i] == "1":
+                        while start_i < len_x and matrix[start_j][start_i] == "1":
                             len_now += 1
                             start_i += 1
-                            if start_i == len(matrix[0]):
-                                break
                         start_i = i
                         min_len = min(min_len, len_now)
-                        max_now = high_now * min_len
-                        max_answer = max(max_now, max_answer)
+                        max_answer = max(high_now * min_len, max_answer)
                         start_j += 1
-                        if start_j == len(matrix):
+                        if start_j == len_y:
                             break
+        #print(max_answer)
         return max_answer
 
 nums1 = [
