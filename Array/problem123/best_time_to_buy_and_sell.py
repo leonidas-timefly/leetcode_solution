@@ -21,7 +21,7 @@ class Solution:
             if secondSell < secondBuy + price:
                 secondSell = secondBuy + price
             print(secondSell)
-        #print(secondSell)
+        print(secondSell)
         return secondSell
 
 nums1 = [3,3,5,0,0,3,1,4]
