@@ -4,10 +4,10 @@ the array such that nums[i] = nums[j] and the absolute difference between i and 
 '''
 class Solution:
     def containsNearbyDuplicate(self, nums, k):
-        if len(nums) == 0:
+        if len(nums) == 0 or len(nums) == 1:
             return 0
         m = 0
-        while nums[m] == nums[m+1]:
+        while nums[m] == nums[m+1] - 1:
             m += 1
             if m == len(nums) - 1:
                 return 0
