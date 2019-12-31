@@ -4,7 +4,7 @@ find the area of largest rectangle in the histogram.
 '''
 class Solution:
     def largestRectangleArea(self, heights):
-        # make right boundary
+        # make right boundary\
         heights.append(0)
         # store left boundary index
         stack = [-1] # tricky: -1 also denotes the left index of 0
