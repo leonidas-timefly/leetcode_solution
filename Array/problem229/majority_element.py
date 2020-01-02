@@ -16,10 +16,6 @@ class Solution:
         return answer
 
 
-    if len(nums) < 3:
-        answer = list(set(nums))
-        return answer
-
 
 
 nums1 = [0, 0, 0]
