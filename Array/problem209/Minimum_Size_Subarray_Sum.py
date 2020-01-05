@@ -13,7 +13,7 @@ class Solution:
                 min_length = min(min_length, i - start + 1)
                 sum_num -= nums[start]
                 start += 1
-        if min_length == 10000
+        if min_length == 10000:
             return 0
         return min_length
 '''
