@@ -36,10 +36,11 @@ class Solution:
         for i in range(len(nums)):
             if nums[i] != i + 1:
                 answer.append(nums[i])
-        #print(answer)
+        print(nums)
+        print(answer)
         return answer
 
 
-nums1 = [10,2,5,10,9,1,1,4,3,7]
+nums1 = [4,3,2,7,8,2,3,1]
 function = Solution()
 function.findDuplicates(nums1)
