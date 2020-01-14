@@ -5,10 +5,19 @@ difference is k.
 '''
 class Solution:
     def findPairs(self, nums, k):
+        if k < 0:
+            return 0
         nums.sort()
         if k == 0:
-            for i in range(len(nums)):
-
+            i = 0
+            temp = []
+            while i < len(nums) - 1:
+                if nums[i] == nums[i+1]:
+                    temp.append(nums[i])
+                    i += 1
+                i += 1
+            temp = list(set(temp))
+            return len(temp)
         nums=list(set(nums))
         k_num = 0
         for i in range(len(nums)):
