@@ -18,16 +18,19 @@ class Solution:
         answer = []
         for i in range(r):
             answer.append([])
-        print(answer)
+        #print(answer)
         temp = []
         for i in range(len(nums)):
-            temp.append(nums[i][0])
-            temp.append(nums[i][1])
-        print(temp)
-        for m in range(len(answer)):
-            for n in range(c*m, c*(m + 1) + 1):
-                answer[m].append(temp(n))
-        print(answer)
+            for j in range(len(nums[0])):
+                temp.append(nums[i][j])
+        #print(temp)
+        #print(r)
+        for m in range(r):
+            for n in range(c*m, c*(m + 1)):
+                #print(c*m)
+                #print(c*(m + 1) + 1)
+                answer[m].append(temp[n])
+        #print(answer)
         return answer
 
 nums1 = [[1,2],
