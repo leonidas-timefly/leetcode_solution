@@ -11,8 +11,10 @@ class Solution:
         for k in range(len(answer)):
             for m in range(k + 1, len(answer)):
                 if answer[k] != 0 and answer[m] != 0:
+
                     for n in range(m - k + 1, min(len(answer), k + m - 1)):
                         count_nums += answer[n]
+
                     count_nums -= 2
         #print(count_nums)
         return count_nums
