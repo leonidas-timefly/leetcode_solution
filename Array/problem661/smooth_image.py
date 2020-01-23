@@ -24,7 +24,7 @@ class Solution:
                 if n == len(M[0]) and m != 0 and m != len(M):
                     temp[m][n] = math.floor((M[m][n] + M[m - 1][n] + M[m + 1][n] + M[m][n - 1] + M[m - 1][n - 1] + M[m + 1][n-1]) / 6)
                 if m == 0 and n == 0:
-                    temp[m][n] = math.floor((M[0][0] + M[0][1] + M[1][0] + M[1][1]) / 4)
+                    temp[m][n] = math.floor((M[0][0] + M[0][1] + M[1][0] + M[1 ][1]) / 4)
                 if m == 0 and n == len(M[0]):
                     temp[m][n] = math.floor((M[0][len(M[0])] + M[0][len(M[0]) - 1] + M[1][len(M[0])] + M[1][len(M[0]) - 1]) / 4)
                 if m == len(M) and n == 0:
