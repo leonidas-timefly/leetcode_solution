@@ -6,24 +6,30 @@ Your task is to find the smallest possible length of a (contiguous) subarray of 
 '''
 class Solution:
     def findShortestSubArray(self, nums):
-        if len(nums) == 1:
-            return 0
+        len_nums = len(nums)
+        if len_nums == 1:
+            return 1
         temp = [0]*(max(nums) + 1)
-        for i in range(len(nums)):
+        for i in range(len_nums):
             temp[nums[i]] += 1
-        index_num = temp.index(max(temp))
-        #print(index_num)
-        for k in range(len(nums)):
-            if nums[k] == index_num:
-                begin_index = k
+        same_degree = []
+        k = max(temp)
+        if k == 1:
+            return 1
+        for j in range(len(temp)):
+            if temp[j] == k:
+                same_degree.append(j)
+        for h in range(len(same_degree)):
+            for k in range(len_nums):
+                begin_index = nums.index(same_degree[h])
                 break
-        for m in range(len(nums) - 1, -1, -1):
-            if nums[m] == index_num:
-                end_index = m
-                break
-        #print(end_index - begin_index + 1)
-        return end_index - begin_index + 1
+            for m in range(len_nums - 1, -1, -1):
+                if nums[m] == same_degree[h]:
+                    end_index = m
+                    break
+            same_degree[h] = end_index - begin_index + 1
+        return min(same_degree)
 
-nums1 = [1,2,2,3,1,4,2]
+nums1 = [49999,1,1,1,2,1]
 function = Solution()
 function.findShortestSubArray(nums1)
