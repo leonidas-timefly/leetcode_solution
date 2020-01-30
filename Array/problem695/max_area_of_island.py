@@ -10,12 +10,13 @@ class Solution:
         for i in range(len(grid)):
             for j in range(len(grid[0])):
                 if grid[i][j] == 1:
-                    max_area = max(max_area, )
+                    max_area = max(max_area, self.recurse_find_max(grid, i, j))
+        print(max_area)
         return max_area
     def recurse_find_max(self, grid, m, n):
-        if 0 < m < len(grid) and 0 < n < len(grid[0]) and grid[m][n] == 1:
+        if 0 <= m < len(grid) and 0 <= n < len(grid[0]) and grid[m][n] == 1:
             grid[m][n] = 0
-            return 1 + recurse_find_max(grid, m + 1, n) + recurse_find_max(grid, m - 1, n) + recurse_find_max(grid, m, n + 1) + recurse_find_max(grid, m, n - 1)
+            return 1 + self.recurse_find_max(grid, m + 1, n) + self.recurse_find_max(grid, m - 1, n) + self.recurse_find_max(grid, m, n + 1) + self.recurse_find_max(grid, m, n - 1)
         return 0
 nums1 = [[0,0,1,0,0,0,0,1,0,0,0,0,0],
  [0,0,0,0,0,0,0,1,1,1,0,0,0],
@@ -25,5 +26,6 @@ nums1 = [[0,0,1,0,0,0,0,1,0,0,0,0,0],
  [0,0,0,0,0,0,0,0,0,0,1,0,0],
  [0,0,0,0,0,0,0,1,1,1,0,0,0],
  [0,0,0,0,0,0,0,1,1,0,0,0,0]]
+nums2 = [[1]]
 function = Solution()
-function.maxAreaOfIsland(nums1)
+function.maxAreaOfIsland(nums2)
