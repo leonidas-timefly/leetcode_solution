@@ -9,7 +9,25 @@ index.
 '''
 class Solution:
     def pivotIndex(self, nums):
+        k = len(nums)
+        if k < 2:
+            return k - 1
+        if k == 2:
+            if nums[0] == 0:
+                return 1
+            if nums[1] == 0:
+                return 0
+        for i in range(1, k):
+            nums[i] += nums[i - 1]
+        if nums[0] == nums[-1]:
+            return 0
+        for j in range(1, k - 1):
+            if nums[j - 1] == nums[-1] - nums[j]:
+                return j
+        if nums[-2] == 0:
+            return k - 2
+        return -1
 
-nums1 = ["A","A","A","B","B","B"]
+nums1 = [-1,-1,-1,0,1,1]
 function = Solution()
 function.pivotIndex(nums1)
