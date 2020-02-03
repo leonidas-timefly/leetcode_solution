@@ -18,7 +18,15 @@ class Solution:
                 if k <= 0:
                     #print(i)
                     return i
-
+'''
+stander answer:
+        nums.sort()
+        l, r = 0, nums[-1]
+        while r > l:
+            m = (l+r) >> 1
+            l, r = (m + 1, r) if sum([i - bisect.bisect_left(nums, num - m) for i, num in enumerate(nums)]) < k else (l, m)
+        return l
+'''
 nums1 = [1,6,1]
 function = Solution()
 function.smallestDistancePair(nums1, 3)
