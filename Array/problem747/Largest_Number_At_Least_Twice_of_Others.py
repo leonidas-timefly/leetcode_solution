@@ -10,4 +10,4 @@ class Solution:
 
 nums1 = [3, 6, 1, 0]
 function = Solution()
-function.dominantIndex(3, 3)
+function.dominantIndex(nums1)
