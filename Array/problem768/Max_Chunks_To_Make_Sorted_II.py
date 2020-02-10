@@ -9,7 +9,24 @@ What is the most number of chunks we could have made?
 '''
 class Solution:
     def maxChunksToSorted(self, arr):
+        number = 0
+        value_first = -1
+        index_first = 0
+        index_later = 0
+        while index_later < len(arr) - 1:
+            value_first = arr[index_first]
+            if value_first > arr[index_later + 1] and arr[index_later] >= arr[index_later + 1] and index_later < len(arr) - 1:
+                #print("+", index_later)
+                index_later += 1
+            else:
+                number += 1
+                index_later += 1
+                index_first = index_later
+        if arr[-2] >= arr[-1]:
+            number += 1
+        print(number)
+        return number
 
-nums1 = [5,4,3,2,1]
+nums1 = [2,1,3,4,4]
 function = Solution()
 function.maxChunksToSorted(nums1)
