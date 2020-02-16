@@ -6,6 +6,7 @@ floor, and you can either start from the step with index 0, or the step with ind
 '''
 class Solution:
     def minCostClimbingStairs(self, cost):
+
 nums1 = [10, 15, 20]
 function = Solution()
 function.minCostClimbingStairs(nums1)
