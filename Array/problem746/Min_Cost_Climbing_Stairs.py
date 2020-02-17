@@ -6,10 +6,15 @@ floor, and you can either start from the step with index 0, or the step with ind
 '''
 class Solution:
     def minCostClimbingStairs(self, cost):
-        cost_sum = 0
-        i = 0
-        while i < len(cost) - 1:
-            if cost_sum + cost[]
+        len_cost = len(cost)
+        if len_cost == 1:
+            return cost[0]
+        if len_cost == 2:
+            return min(cost[0], cost[1])
+        for i in range(2, len_cost - 1):
+            cost[i] = min(cost[i] + cost[i - 1], cost[i] + cost[i - 2])
+        #print(min(cost[len(cost) - 2], cost[len(cost) - 1]))
+        return min(cost[len_cost - 2], cost[len_cost - 1])
 
 nums1 = [10, 15, 20]
 function = Solution()
