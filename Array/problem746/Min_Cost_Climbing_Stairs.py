@@ -13,7 +13,7 @@ class Solution:
             return min(cost[0], cost[1])
         for i in range(2, len_cost - 1):
             cost[i] = min(cost[i] + cost[i - 1], cost[i] + cost[i - 2])
-        #print(min(cost[len(cost) - 2], cost[len(cost) - 1]))
+        print(min(cost[len(cost) - 2], cost[len(cost) - 1]))
         return min(cost[len_cost - 2], cost[len_cost - 1])
 
 nums1 = [10, 15, 20]
