@@ -18,14 +18,16 @@ Your class will be called like this: MyCalendar cal = new MyCalendar(); MyCalend
 class MyCalendar:
 
     def __init__(self):
+        k = 0
 
     def book(self, start, end):
-
+        a = 1
+#https://leetcode.com/problems/my-calendar-i/discuss/509703/Python-3-solutions-Brute-force-binary-search-bisect
 
 
 # Your MyCalendar object will be instantiated and called as such:
 # obj = MyCalendar()
 # param_1 = obj.book(start,end)
 nums1 = [1,6,1]
-function = Solution()
+function = MyCalendar()
 function.book(3, 3)
