@@ -18,7 +18,7 @@ Your class will be called like this: MyCalendar cal = new MyCalendar(); MyCalend
 class MyCalendar:
 
     def __init__(self):
-        k = 0
+        calendar = []
 
     def book(self, start, end):
         a = 1
