@@ -19,6 +19,7 @@ class MyCalendar:
 
     def __init__(self):
         calendar = []
+
     def book(self, start, end):
         a = 1
 #https://leetcode.com/problems/my-calendar-i/discuss/509703/Python-3-solutions-Brute-force-binary-search-bisect
@@ -27,6 +28,6 @@ class MyCalendar:
 # Your MyCalendar object will be instantiated and called as such:
 # obj = MyCalendar()
 # param_1 = obj.book(start,end)
-nums1 = [1,6,1]
+nums1 = [1, 6, 1]
 function = MyCalendar()
 function.book(3, 3)
