@@ -23,6 +23,10 @@ class MyCalendar:
     def book(self, start, end):
         a = 1
 
+
+
+
+
 #https://leetcode.com/problems/my-calendar-i/discuss/509703/Python-3-solutions-Brute-force-binary-search-bisect
 
 
