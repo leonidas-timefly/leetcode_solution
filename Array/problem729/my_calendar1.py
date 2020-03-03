@@ -19,6 +19,7 @@ class MyCalendar:
 
     def __init__(self):
         calendar = []
+
     def book(self, start, end):
         a = 1
 
