@@ -21,8 +21,6 @@ class MyCalendar:
         calendar = []
 
 
-
-
     def book(self, start, end):
         a = 1
 
